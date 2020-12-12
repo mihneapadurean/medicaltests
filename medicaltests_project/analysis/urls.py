@@ -11,4 +11,4 @@ urlpatterns=[
     path('myprofile',views.myprofile,name='myprofile'),
     path('notifications',views.notifications,name='notifications'),
     path('showall',views.show_all,name='show_all'),
-    ]
+]

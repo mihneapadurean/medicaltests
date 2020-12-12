@@ -18,7 +18,7 @@ def login(request):
             user = auth.authenticate(username=username, password=password)
             if user is not None:
                 auth.login(request, user)
-                return redirect('check_user')
+                return redirect('analysis:show_all')
             else:
                 errors = form.add_error(None, "Login failed")
     return render(request, 'login.html', {'form': form})

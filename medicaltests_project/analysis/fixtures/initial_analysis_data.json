@@ -1,0 +1,467 @@
+[
+  {
+    "model": "analysis.healthclinic",
+    "pk": 1,
+    "fields": { "name": "clinic0" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 2,
+    "fields": { "name": "clinic1" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 3,
+    "fields": { "name": "clinic2" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 4,
+    "fields": { "name": "clinic3" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 5,
+    "fields": { "name": "clinic4" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 6,
+    "fields": { "name": "clinic5" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 7,
+    "fields": { "name": "clinic6" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 8,
+    "fields": { "name": "clinic7" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 9,
+    "fields": { "name": "clinic8" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 10,
+    "fields": { "name": "clinic9" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 11,
+    "fields": { "name": "clinic11" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 12,
+    "fields": { "name": "clinic12" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 13,
+    "fields": { "name": "clinic13" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 14,
+    "fields": { "name": "clinic14" }
+  },
+  {
+    "model": "analysis.healthclinic",
+    "pk": 15,
+    "fields": { "name": "clinic15" }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 1,
+    "fields": {
+      "patient": 1,
+      "health_clinic": 1
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 2,
+    "fields": {
+      "patient": 2,
+      "health_clinic": 2
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 3,
+    "fields": {
+      "patient": 3,
+      "health_clinic": 3
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 4,
+    "fields": {
+      "patient": 4,
+      "health_clinic": 4
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 5,
+    "fields": {
+      "patient": 5,
+      "health_clinic": 5
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 6,
+    "fields": {
+      "patient": 6,
+      "health_clinic": 6
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 7,
+    "fields": {
+      "patient": 7,
+      "health_clinic": 7
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 8,
+    "fields": {
+      "patient": 8,
+      "health_clinic": 8
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 9,
+    "fields": {
+      "patient": 9,
+      "health_clinic": 9
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 10,
+    "fields": {
+      "patient": 10,
+      "health_clinic": 10
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 11,
+    "fields": {
+      "patient": 11,
+      "health_clinic": 11
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 12,
+    "fields": {
+      "patient": 11,
+      "health_clinic": 12
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 13,
+    "fields": {
+      "patient": 11,
+      "health_clinic": 13
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 14,
+    "fields": {
+      "patient": 11,
+      "health_clinic": 14
+    }
+  },
+  {
+    "model": "analysis.medicaltest",
+    "pk": 15,
+    "fields": {
+      "patient": 11,
+      "health_clinic": 15
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 1,
+    "fields": {
+      "name": "rt0",
+      "category": "c0",
+      "measurementUnit": "mu0"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 2,
+    "fields": {
+      "name": "rt1",
+      "category": "c1",
+      "measurementUnit": "mu1"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 3,
+    "fields": {
+      "name": "rt2",
+      "category": "c2",
+      "measurementUnit": "mu2"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 4,
+    "fields": {
+      "name": "rt3",
+      "category": "c3",
+      "measurementUnit": "mu3"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 5,
+    "fields": {
+      "name": "rt4",
+      "category": "c4",
+      "measurementUnit": "mu4"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 6,
+    "fields": {
+      "name": "rt5",
+      "category": "c5",
+      "measurementUnit": "mu5"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 7,
+    "fields": {
+      "name": "rt6",
+      "category": "c6",
+      "measurementUnit": "mu6"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 8,
+    "fields": {
+      "name": "rt7",
+      "category": "c7",
+      "measurementUnit": "mu7"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 9,
+    "fields": {
+      "name": "rt8",
+      "category": "c8",
+      "measurementUnit": "mu8"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 10,
+    "fields": {
+      "name": "rt9",
+      "category": "c9",
+      "measurementUnit": "mu9"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 11,
+    "fields": {
+      "name": "rt11",
+      "category": "c11",
+      "measurementUnit": "mu11"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 12,
+    "fields": {
+      "name": "rt12",
+      "category": "c12",
+      "measurementUnit": "mu12"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 13,
+    "fields": {
+      "name": "rt13",
+      "category": "c13",
+      "measurementUnit": "mu13"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 14,
+    "fields": {
+      "name": "rt14",
+      "category": "c14",
+      "measurementUnit": "mu14"
+    }
+  },
+  {
+    "model": "analysis.resulttype",
+    "pk": 15,
+    "fields": {
+      "name": "rt15",
+      "category": "c15",
+      "measurementUnit": "mu15"
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 1,
+    "fields": {
+      "value": 0.0,
+      "medicalTest": 1,
+      "resultType": 1
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 2,
+    "fields": {
+      "value": 1.0,
+      "medicalTest": 2,
+      "resultType": 2
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 3,
+    "fields": {
+      "value": 2.0,
+      "medicalTest": 3,
+      "resultType": 3
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 4,
+    "fields": {
+      "value": 3.0,
+      "medicalTest": 4,
+      "resultType": 4
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 5,
+    "fields": {
+      "value": 4.0,
+      "medicalTest": 5,
+      "resultType": 5
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 6,
+    "fields": {
+      "value": 5.0,
+      "medicalTest": 6,
+      "resultType": 6
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 7,
+    "fields": {
+      "value": 6.0,
+      "medicalTest": 7,
+      "resultType": 7
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 8,
+    "fields": {
+      "value": 7.0,
+      "medicalTest": 8,
+      "resultType": 8
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 9,
+    "fields": {
+      "value": 8.0,
+      "medicalTest": 9,
+      "resultType": 9
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 10,
+    "fields": {
+      "value": 9.0,
+      "medicalTest": 10,
+      "resultType": 10
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 11,
+    "fields": {
+      "value": 11.0,
+      "medicalTest": 11,
+      "resultType": 11
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 12,
+    "fields": {
+      "value": 12.0,
+      "medicalTest": 12,
+      "resultType": 12
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 13,
+    "fields": {
+      "value": 13.0,
+      "medicalTest": 13,
+      "resultType": 13
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 14,
+    "fields": {
+      "value": 14.0,
+      "medicalTest": 14,
+      "resultType": 14
+    }
+  },
+  {
+    "model": "analysis.result",
+    "pk": 15,
+    "fields": {
+      "value": 15.0,
+      "medicalTest": 15,
+      "resultType": 15
+    }
+  }
+]
