@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HomePage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        /* Modify the background color */
+
+        .navbar-custom {
+            background-color: aqua;
+        }
+            /* Modify brand and text color */
+
+            .navbar-custom .navbar-brand,
+            .navbar-custom .navbar-text {
+                color: white;
+            }
+           
+    </style>
+    <center>
+        <nav class="navbar navbar-custom navbar-static-top">
+            <div class="container">
+                <ul class="nav navbar-nav ml-auto">
+                    <li><a class="navbar-brand" href="{% url 'analysis:index' %}">MyProfile</a></li>
+                    <li><a class="navbar-brand" href="{% url 'analysis:index' %}">Add</a></li>
+                    <li><a class="navbar-brand" href="{% url 'analysis:index' %}">ShowAll</a></li>
+                    <li><a class="navbar-brand" href="{% url 'analysis:index' %}">Graphics</a></li>
+                    <li><a class="navbar-brand" href="{% url 'analysis:index' %}">Notifications</a></li>
+                    <li><a class="navbar-brand" href="{% url 'analysis:index' %}">Chat</a></li>
+                </ul>
+            </div>
+        </nav>
+    </center>
+</body>
+</html>

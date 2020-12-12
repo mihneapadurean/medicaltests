@@ -7,14 +7,10 @@ from .models import *
 
 def index(request):
     latest_analysis_list=Result.objects.all()
+    template=loader.get_template('navbar.html')
     context={
-        'latest_analysis_list':
+        'results':
         latest_analysis_list
         }
 
-    stringRes=""
-    for a in latest_analysis_list:
-        stringRes+=str(a)+"\n"
-
-
-    return HttpResponse(stringRes)
+    return HttpResponse(template.render(context,request))
