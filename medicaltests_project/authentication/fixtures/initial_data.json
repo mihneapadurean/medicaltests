@@ -1,0 +1,30 @@
+[
+    {
+        "model": "authentication.gender",
+        "pk": 1,
+        "fields": {
+            "name": "Male"
+        }
+    },
+    {
+        "model": "authentication.gender",
+        "pk": 2,
+        "fields": {
+            "name": "Female"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 1,
+        "fields": {
+            "username": "mihneapadurean",
+            "password": "pbkdf2_sha256$216000$SfG9hicm9Ji4$vgfhC6XJ3946ngCafMiu4HesnWwzoAIHWQz52BcRYuQ=",
+            "email": "mihneapadurean@yahoo.com",
+            "first_name": "Mihnea",
+            "last_name": "Padurean",
+            "city": "Cluj-Napoca",
+            "birth_day": "2000-05-22",
+            "gender": 1
+        }
+    }
+]
