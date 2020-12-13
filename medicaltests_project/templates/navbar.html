@@ -2,39 +2,98 @@
 <html>
 <head>
     <title>HomePage</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
 </head>
 <body>
     <style>
+        li {
+            display: inline-block;
+        }
         /* Modify the background color */
         .navbar-custom {
-            background-color: aqua;
+            background-color: #6200ea;
         }
             
         /* Modify brand and text color */
         .navbar-custom .navbar-brand,
-        .navbar-custom .navbar-text {
+        .navbar-custom .navbar-text, .navbar-nav {
             color: white;
+        }
+
+        .navbar-nav {
+            flex-direction: row;
+        }
+
+        .nav-item a, .nav-item a:focus, .nav-item a:hover, .brand a {
+            color: white;
+        }
+        .navbar-nav > li > a:hover, .navbar-nav > li > a:focus, .navbar-nav > li > button {
+            background-color:  #4f07b3;
+            color: white;
+        }
+        .nav-item {
+            font-size: 1.1em !important;
+            padding-right: .5rem !important;
+            padding-left: .5rem !important;
+        }
+
+        .dropdown > a:focus {
+            outline: none !important;
+        }
+        .nav-item > .dropdown-menu {
+            background-color: gray;
         }
            
     </style>
-    <center>
-        <nav class="navbar navbar-custom navbar-static-top">
-            <div class="container">
-                <ul class="nav navbar-nav ml-auto">
-                    <li><a class="navbar-brand" href="{% url 'analysis:home' %}">Home</a></li>
-                    <li><a class="navbar-brand" href="{% url 'analysis:myprofile' %}">MyProfile</a></li>
-                    <li><a class="navbar-brand" href="{% url 'analysis:add' %}">Add</a></li>
-                    <li><a class="navbar-brand" href="{% url 'analysis:show_all' %}">ShowAll</a></li>
-                    <li><a class="navbar-brand" href="{% url 'analysis:statistics' %}">Statistics</a></li>
-                    <li><a class="navbar-brand" href="{% url 'analysis:notifications' %}">Notifications</a></li>
-                    <li><a class="navbar-brand" href="{% url 'analysis:chat' %}">Chat</a></li>
-                </ul>
+    <nav class="navbar navbar-custom navbar-expend-lg rounded">
+        <div class="container-fluid">
+            <div class="col-1"></div>
+            <ul class="navbar-nav d-flex col justify-content-start">
+                <li class="nav-item active">
+                    <a class="nav-link" href={% url 'analysis:myprofile' %}>MyProfile</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'analysis:add' %}">Add</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'analysis:show_all' %}">ShowAll</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'analysis:statistics' %}">Statistics</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'analysis:notifications' %}">Notifications</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'analysis:chat' %}">Chat</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-brand d-flex col justify-content-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">App Name</a>
+                </li>
+            </ul>
+            <div class="d-flex col justify-content-end">
+                <div class="dropdown nav-item active">
+                    <a class="navbar-custom btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Contact</a>
+                        <a class="dropdown-item" href={% url 'logout' %}>Logout</a>
+                    </div>
+                </div>
             </div>
-        </nav>
+            <div class="col-1"></div>
+        </div>
+    </nav>
+    <center>
         {% block body_block %}
         {% endblock %}
     </center>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </html>

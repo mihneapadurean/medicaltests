@@ -3,6 +3,7 @@ from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 from .models import *
 from authentication.models import Patient
 from .forms import ResultForm
@@ -51,14 +52,15 @@ def notifications(request):
     context={}
     return HttpResponse(template.render(context,request))
 
-
+@login_required
 def show_all(request):
     #getting the patient
     try:
         searched_patient=Patient.objects.get(User_id=request.user.id)
     except Patient.DoesNotExist:
-        return HttpResponse("Only patients have tests!")
     #getting all the medical tests for the pacient
+        return render(request, '404_page.html')
+    #results=Result.objects.all()
     medicalTests=MedicalTest.objects.filter(patient=searched_patient)
 
     #getting the clinics where the medical tests from medicalTests had been made
