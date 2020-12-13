@@ -1,5 +1,10 @@
 from django.db import models
 from authentication.models import Patient
+from django.http import HttpResponse,Http404,HttpResponseRedirect
+from django.shortcuts import render,get_object_or_404
+from django.template import loader
+from django.urls import reverse
+from django.views import generic
 
 
 class HealthClinic(models.Model):
@@ -15,6 +20,19 @@ class MedicalTest(models.Model):
 
     def __str__(self):
         return ("Medical Test having patient "+str(self.patient)+" and clinic as "+str(self.health_clinic)+ "\n")
+
+    '''
+    def save(self,*args,**kwargs):
+        #searched_patient=Patient.objects.get(Patient_id=request.user.id)
+        try:
+            searched_patient=Patient.objects.get(User_id=request.user.id)
+            self.patient=searched_patient
+            super(MedicalTest,self).save(*args,**kwargs)
+        except Patient.DoesNotExist:
+        #getting all the medical tests for the pacient
+            return render(request, '404_page.html')
+    '''  
+
 
 
 class ResultType(models.Model):

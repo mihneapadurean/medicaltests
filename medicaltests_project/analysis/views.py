@@ -6,7 +6,7 @@ from django.views import generic
 from django.contrib.auth.decorators import login_required
 from .models import *
 from authentication.models import Patient
-from .forms import ResultForm
+from .forms import *
 
 
 def home(request):
@@ -21,16 +21,55 @@ def home(request):
 
 
 def add(request):
+   
+    context={}
+
+    return render(request,'analysis/add_entity.html',context)
+   
+def add_clinic(request):
+    form=HealthClinicForm()
+    if request.method=='POST':
+        form=HealthClinicForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context={'form':form,'success':False}
+    return render(request,'analysis/add_clinic.html',context)
+
+def add_medical_test(request):
+    form=MedicalTestForm()
+    if request.method=='POST':
+        form=MedicalTestForm(request.POST)
+        if form.is_valid():
+            patient=Patient.objects.get(pk=request.user.pk)
+            hc=HealthClinic.objects.get(pk=request.POST['health_clinic'])
+            mt=MedicalTest(patient=patient,health_clinic=hc)
+            mt.save()
+
+    context={'form':form}
+    return render(request,'analysis/add_medical_test.html',context)
+
+def add_result_type(request):
+    form=ResultTypeForm()
+    if request.method=='POST':
+        form=ResultTypeForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context={'form':form}
+    return render(request,'analysis/add_result_type.html',context)
+
+def add_result(request):
     form=ResultForm()
+    patient=Patient.objects.get(pk=request.user.pk)
+    form.fields["medicalTest"].queryset=MedicalTest.objects.filter(pk=patient.id)
     if request.method=='POST':
         form=ResultForm(request.POST)
         if form.is_valid():
             form.save()
 
     context={'form':form}
-
-    return render(request,'analysis/add_entity.html',context)
-
+    return render(request,'analysis/add_result.html',context)
 
 def chat(request):
     template=loader.get_template('analysis/chat.html')
