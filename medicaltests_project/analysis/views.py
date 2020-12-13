@@ -56,7 +56,7 @@ def notifications(request):
 def show_all(request):
     #getting the patient
     try:
-        searched_patient=Patient.objects.get(User_id=request.user.id)
+        searched_patient=Patient.objects.get(user_id=request.user.id)
     except Patient.DoesNotExist:
     #getting all the medical tests for the pacient
         return render(request, '404_page.html')

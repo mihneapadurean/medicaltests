@@ -12,15 +12,10 @@ class User(AbstractUser):
     birth_day = models.DateField('birthDay')
     gender = models.ForeignKey(Gender, on_delete=models.PROTECT)
 
-    def is_patient(self):
-        self.patient_info.count() > 0 
-    def is_medic(self):
-        self.medic_info.count() > 0 
-
 class Medic(models.Model):
-    User = models.ForeignKey(User, related_name="medic_info", on_delete=models.PROTECT)
+    user = models.ForeignKey(User, related_name="medic_info", on_delete=models.PROTECT)
     hospital = models.CharField('hospital', max_length=30)
 
 class Patient(models.Model):
-    User = models.ForeignKey(User, related_name="patient_info", on_delete=models.PROTECT)
+    user = models.ForeignKey(User, related_name="patient_info", on_delete=models.PROTECT)
     weight = models.IntegerField('weight')
