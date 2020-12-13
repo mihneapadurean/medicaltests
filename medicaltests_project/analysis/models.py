@@ -6,7 +6,7 @@ class HealthClinic(models.Model):
     name=models.CharField(max_length=200)
 
     def __str__(self):
-        return ("Health clinic: "+str(self.name)+"\n")
+        return (str(self.name))
 
 
 class MedicalTest(models.Model):
@@ -27,7 +27,7 @@ class ResultType(models.Model):
 
 class Result(models.Model):
     value=models.FloatField(null=True)
-    medicalTest=models.ForeignKey(MedicalTest,on_delete=models.PROTECT)
+    medicalTest=models.ForeignKey(MedicalTest,on_delete=models.PROTECT, related_name="results")
     resultType=models.ForeignKey(ResultType,on_delete=models.PROTECT)
 
     def __str__(self):

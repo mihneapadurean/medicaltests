@@ -6,6 +6,8 @@ from django.views import generic
 from django.contrib.auth.decorators import login_required
 from .models import *
 from authentication.models import Patient
+from .forms import ResultForm
+
 
 def home(request):
     latest_analysis_list=Result.objects.all()
@@ -19,9 +21,15 @@ def home(request):
 
 
 def add(request):
-    template=loader.get_template('analysis/add_entity.html')
-    context={}
-    return HttpResponse(template.render(context,request))
+    form=ResultForm()
+    if request.method=='POST':
+        form=ResultForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context={'form':form}
+
+    return render(request,'analysis/add_entity.html',context)
 
 
 def chat(request):
@@ -46,15 +54,50 @@ def notifications(request):
 
 @login_required
 def show_all(request):
+    #getting the patient
     try:
         searched_patient=Patient.objects.get(User_id=request.user.id)
     except Patient.DoesNotExist:
+    #getting all the medical tests for the pacient
         return render(request, '404_page.html')
     #results=Result.objects.all()
     medicalTests=MedicalTest.objects.filter(patient=searched_patient)
-    results=Result.objects.filter(pk__in=[x.pk for x in medicalTests])
+
+    #getting the clinics where the medical tests from medicalTests had been made
+    clinics=[]
+    for mt in medicalTests:
+        clinic=mt.health_clinic
+        if clinic not in clinics:
+            clinics.append(clinic)
+
+    #creating a dictionary (key=clinic, value=dictionary(key=mt,value=list(res)))
+    dictOfListOfList={}
+    for clinic in clinics:
+        medicalTestsFilteredByClinics=medicalTests.filter(health_clinic=clinic)
+        for mt in medicalTestsFilteredByClinics:
+            results=list(Result.objects.filter(medicalTest=mt))
+            listOfList=[mt,results]
+            dictOfListOfList[clinic]=listOfList
+    #results=Result.objects.filter(pk__in=[x.pk for x in medicalTests])
     template=loader.get_template('analysis/show_all.html')
-    context={'results':
-        results
+    context={
+        'data':
+        dictOfListOfList
         }
     return render(request,'analysis/show_all.html',context)
+    #return dictOfListOfList
+
+
+def show_clinics(request):
+    d=show_all(request)
+    clinics=[]
+    for key in d.keys():
+        clinics.append(key)
+    context={
+        'clinics':
+        clinics
+        }
+    return render(request,'analysis/show_all.html',context)
+
+
+
