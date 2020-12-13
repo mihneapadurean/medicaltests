@@ -11,4 +11,6 @@ urlpatterns=[
     path('myprofile',views.myprofile,name='myprofile'),
     path('notifications',views.notifications,name='notifications'),
     path('showall',views.show_all,name='show_all'),
+    #path('showall/<int:healthclinic_id>',views.show_mt,name='show_mt'),
+    #path('showall/<int:health_clinic_id>/<int:medical_test_id>',views.show_res,name='show_res'),
 ]

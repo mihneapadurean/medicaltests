@@ -1,1 +1,14 @@
 {% extends 'navbar.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+<h3>Result Form</h3>
+<hr>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" >
+</form>
+
+{% endblock %}
