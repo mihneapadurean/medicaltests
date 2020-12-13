@@ -33,14 +33,16 @@ AUTH_USER_MODEL = "authentication.User"
 # Application definition
 
 INSTALLED_APPS = [
-    'analysis.apps.AnalysisConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'crispy_forms',
     
+    'analysis.apps.AnalysisConfig',
     'authentication'
 ]
 
@@ -60,7 +62,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, "templates\\authentication"),
+            os.path.join(BASE_DIR, "templates", "authentication"),
             os.path.join(BASE_DIR,"templates")
         ],
         'APP_DIRS': True,
@@ -132,3 +134,6 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static'),
     os.path.join(BASE_DIR,'boot'),
     ]
+
+#Crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
