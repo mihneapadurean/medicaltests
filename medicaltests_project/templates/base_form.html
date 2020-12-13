@@ -1,11 +1,7 @@
 <!doctype html>
 <html lang="en">
 <style>
-    .col-8 {
-        margin: auto;
-        width: 50%;
-    }
-    body {
+    html, body {
         height: 100%;
     }
 </style>
@@ -16,10 +12,10 @@
     <title>[App name]</title>
   </head>
   <body>
-    <div class="container" style=>
-        <div class="row justify-content-center allign-self-center">
-            <div class="col-8">
-                <h1>[App name]</h1>
+    <div class="container h-100">
+        <div class="d-flex allign-items-center">
+            <div class="col-8 mx-auto">
+                <h1 style="text-align: center;">[App name]</h1>
                 <hr class="mt-0 mb-4">
                 {% block content %}
                 {% endblock %}

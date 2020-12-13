@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.forms.utils import ErrorList
 from django.shortcuts import redirect
 
-from .forms import Login
+from .forms import Login, RegisterPatient, RegisterMedic
 
 # Create your views here.
 def login(request):
@@ -22,6 +22,23 @@ def login(request):
             else:
                 errors = form.add_error(None, "Login failed")
     return render(request, 'login.html', {'form': form})
+
+def logout(request):
+    auth.logout(request)
+    return redirect("login")
+
+def register(request, category):
+    category_to_form = {
+        "patient": RegisterPatient,
+        "medic": RegisterMedic
+    }
+    if request.method == "GET":
+        form = category_to_form[category]()
+    elif request.method == "POST":
+        form = category_to_form[category](request.POST)
+        if form.is_valid:
+            pass
+    return render(request, 'register.html', {'category':category, 'form': form})
 
 def check_user(request):
     return HttpResponse(request.user.username)

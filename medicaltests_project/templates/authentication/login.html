@@ -4,15 +4,24 @@
 
 {% block content %}
 <style>
-    .btn{
-        background-color: aquamarine !important;
+    .button-login{
+        background-color:  #6200ea !important;
+        color: white;
+        margin-bottom: 0.5em;
+    }
+    .button-register {
+        background-color: rgb(196, 193, 193);
+        color: black;
     }
 </style>
-    <form action={% url 'login' %} method="POST">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-block">Log in</button>
-    </form>
+    <div>
+        <form action={% url 'login' %} method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-block button-login">Log in</button>
+        </form>
+        <a class="btn btn-block button-register" href={% url 'register' category="patient" %}>Sign Up</a>
+    </div> 
     <div>
         {% if form.errors %}
             {% for errors in form.errors %}
