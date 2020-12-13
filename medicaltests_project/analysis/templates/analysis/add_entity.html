@@ -3,12 +3,9 @@
 {% load crispy_forms_tags %}
 
 {% block body_block %}
-<h3>Result Form</h3>
-<hr>
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <input type="submit" >
-</form>
+<a class="btn btn-block button-register" href={% url 'analysis:add_clinic' %}>Add new health clinic</a>
+<a class="btn btn-block button-register" href={% url 'analysis:add_medical_test' %}>Add new medical test</a>
+<a class="btn btn-block button-register" href={% url 'analysis:add_result_type' %}>Add new result type</a>
+<a class="btn btn-block button-register" href={% url 'analysis:add_result' %}>Add new result</a>
 
 {% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'navbar.html' %}
+{% load crispy_forms_tags %}
+{% block body_block %}
+<h3>Medical Test Form</h3>
+<form action="{% url 'analysis:add' %}" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit">
+</form>
+{% endblock %}
